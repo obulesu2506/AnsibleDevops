@@ -1,6 +1,6 @@
 - name: nginx S/W installation
   hosts: web
-  become: -b
+  become: yes # -b will use in command line. This looks like SUDO access with this we can execute scripts incase of serverlevel actions
   tasks: 
     - name: nginx install in RHEL or any other Linux Flavor (ansible.builtin.dnf specific to RHEL)
       ansible.builtin.package:
