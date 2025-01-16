@@ -1,0 +1,13 @@
+- name: nginx S/W installation
+  hosts: web
+  become: -b
+  tasks: 
+    - name: nginx install in RHEL or any other Linux Flavor (ansible.builtin.dnf specific to RHEL)
+      ansible.builtin.package:
+        name: nginx
+        state: present
+    - name: start the nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
