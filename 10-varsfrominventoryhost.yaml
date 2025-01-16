@@ -1,0 +1,7 @@
+- name: Calling variables from hosts
+  hosts: web
+  tasks:
+    - name: Print variables from host level
+      ansible.builtin.debug:
+        msg: "Course is {{ COURSE }}, Duration is {{ DURATION }} and Student is {{ STUDENT }}"
+

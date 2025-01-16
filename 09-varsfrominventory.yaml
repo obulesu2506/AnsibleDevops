@@ -5,3 +5,9 @@
     - name: Print Course Information from Inventory
       ansible.builtin.debug:
         msg: "Course is {{ COURSE }}, Duration is {{ DURATION }} and Student name is {{ STUDENT }}"
+
+#Need to pass below info in inventory file if you run this script
+# [local:vars]
+# COURSE="DevSecOps with AWS"
+# DURATION=110HRS
+# STUDENT=Kumar
