@@ -6,4 +6,4 @@
   tasks:
     - name: Printing variables fetching from seperate file
       ansible.builtin.debug:
-        msg: "Course is {{ COURSE }}, Duration is {{ DURATION }} and Student is {{ STUDENt }}"
+        msg: "Course is {{ COURSE }}, Duration is {{ DURATION }} and Student is {{ STUDENT }}"
