@@ -1,0 +1,17 @@
+- name: Passing Variable values in command Prompt
+  hosts: local
+  connection: local
+  vars_prompt:
+    - name: COURSE
+      prompt: Please enter the Course
+      private: false # can mention if input argument is not confidential and display to all while entering
+    - name: DURATION
+      prompt: Please enter the Duration
+      private: true
+    - name: STUDENT
+      prompt: Please enter the Student Name
+      private: false
+  tasks:
+    - name: Getting variable values from command prompt dynamic way
+      ansible.builtin.debug: 
+        msg: "Course is {{ COURSE }}, Duration is {{ DURATION }} and Student name is {{ STUDENT }}"
