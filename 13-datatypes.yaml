@@ -1,0 +1,20 @@
+- name: Ansible Data types Explanation
+  hosts: local
+  connection: local
+  vars:
+    course_info: "DevSecOps with AWS"
+    Duration: 120hrs
+    topics: #list [] --> This indicates lists (square braces)
+    - linux
+    - AWS
+    - Ansible
+    - shell
+    live: true #boolean
+    tools: #map, {} --> This indicates map/dictionary(Flower braces)
+      ci: Jenkins
+      cloud: AWS
+      containerization: docker
+    tasks:
+      - name: print the data types
+        ansible.builtin.debug:
+          msg: "Hello I am learning {{ course_info }} and duration is {{ Duration }}. Topics {{ topics}} are covered. Is it live? {{ live }}. Tools are covered: {{ tools }}"
