@@ -1,0 +1,11 @@
+- name: Variables
+  hosts: local
+  connection: local  #Connecting own server without required credentails
+  vars:  #PLAY Level Variables
+    COURSE: "Devops with AWs"
+    DURATION: 120HRS
+    STUDENT: kumar
+  -tasks:
+    - name: Utilising Variable values
+      ansible-builtin.debug:
+        msg: "Course is {{COURSE}}, Duration is {{DURATION}}, Student is {{STUDENT}}"
