@@ -14,4 +14,4 @@
     
     - name: Print the Variables 2 part
       ansible.builtin.debug:
-        msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, STudent is {{ STUDENT }}"
+        msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Student is {{ STUDENT }}"
