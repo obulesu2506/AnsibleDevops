@@ -1,6 +1,6 @@
 - name: Install nginx in different linux flavors
   hosts: web
-#  become: yes
+  become: yes
   tasks:
     - name: install nginx if RHEL
       ansible.builtin.dnf:
