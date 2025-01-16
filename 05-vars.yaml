@@ -5,7 +5,7 @@
     COURSE: "Devops with AWs"
     DURATION: 120HRS
     STUDENT: kumar
-  - tasks:
+  tasks:
     - name: Utilising Variable values
-      ansible-builtin.debug:
+      ansible.builtin.debug:
         msg: "Course is {{COURSE}}, Duration is {{DURATION}}, Student is {{STUDENT}}"
