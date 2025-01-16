@@ -1,0 +1,12 @@
+- name: Installing few packages alone out of some groups
+  hosts: web
+  tasks:
+    - name: Few Packages needs to be installed in specified packages
+      ansible.builtin.package:
+        name: "{{ item.name }}"
+        state: "{{ item.state }}"
+      loop:
+        - { name: 'git', state: 'present' }
+        - { name: 'mysql', state: 'absent' }
+        - { name: 'git', state: 'absent' }
+        - { name: 'zip', state: 'present' }
