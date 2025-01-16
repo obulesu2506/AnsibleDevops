@@ -1,0 +1,16 @@
+- name: Verify given number is greater or not
+  hosts: local
+  connection: local
+  vars:
+    input: 27
+  tasks:
+    - name: print given input is greater or not
+      ansible.builtin.debug:
+        msg: "Given number {{ input }} is greater than 20"
+      when: input > 20
+    
+    - name: print given number is it is less than or equal to 20
+      ansible.builtin.debug:
+        msg: " Given number {{ input }} is less than or equal to 20"
+      when: input <=20
+
