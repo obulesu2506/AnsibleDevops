@@ -1,0 +1,25 @@
+- name: variables
+  hosts: local
+  connection: local
+  #vars:
+  # GREET: "PLAY"
+  #vars_files:
+  # - course.yaml
+  #vars_prompt:
+  # - name: GREET
+  #   prompt: Enter the value
+  #   private: false  # By default prompt input is invisible, make it true if shouldn't be confidential/secret
+  tasks:
+  - name: Print the variables
+    #vars:
+    #  GREET: "Task"
+    ansible.builtin.debug:
+      msg: "Hello from {{ GREET }}"
+#preferences:
+# 1) Command line or arguments
+# 2) Task level
+# 3) YAML Files
+# 4) Prompt
+# 5) Play
+# 6) inventory files 
+# 7) Roles

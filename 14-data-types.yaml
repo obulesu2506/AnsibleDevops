@@ -1,0 +1,25 @@
+- name: Datatypes explanation
+  hosts: local
+  connection: local
+  vars:
+    course_name: "Devops with AWS"  # String / Variable
+    Duration: 120  # number
+    topics: # list variables i.e., []
+      - linux
+      - shell
+      - Ansible
+      - AWS
+    live: true  # boolean
+    tools:  # map i.e., {}
+      ci: Jenkins
+      CD: ArgoCD
+      Container: Docker/K8S
+      Cloud: AWS
+    tasks:
+    - name: Print Course Information
+      ansible.builtin.debug:
+        msg: "Hello I am learning course: {{ course_name }}, duration: {{ Duration }}, topics are: {{ topics }}, is it live: {{ live }}, tools covered are : {{ tools }}"
+        
+
+
+    

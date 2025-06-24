@@ -1,0 +1,16 @@
+- name: PLAY1
+  hosts: local  # This indicates not required any SSH connection and able to connect by own server
+  connection: local  # This indicates managing its own node, not required any credentails
+  tasks:
+  - name: PLAY1 & TASK1
+    ansible.builtin.debug:
+      msg: "Hello from PLAY1 and TASK1"
+
+- name: PLAY2
+  hosts: local
+  connection: local
+  tasks:
+  - name: PLAY2 and TASK1
+    ansible.builtin.debug:
+      msg: "Hello from PLAY2 and TASK1"
+

@@ -1,0 +1,9 @@
+- name: Variables from fles
+  hosts: local
+  connection: local
+  vars_files:
+    - course.yaml
+  tasks:
+  - name: print the variables fetching from the files
+    ansible.builtin.debug:
+      msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Student is {{ STUDENT }}"

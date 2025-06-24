@@ -1,0 +1,14 @@
+- name: nginx installation and run
+  hosts: local
+  become: yes # -b becoming root user. Should use for any software installations
+  tasks:
+  - name: install nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: start the nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
