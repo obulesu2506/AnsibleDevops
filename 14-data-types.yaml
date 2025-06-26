@@ -15,7 +15,7 @@
       CD: ArgoCD
       Container: Docker/K8S
       Cloud: AWS
-    tasks:
+  tasks:
     - name: Print Course Information
       ansible.builtin.debug:
         msg: "Hello I am learning course: {{ course_name }}, duration: {{ Duration }}, topics are: {{ topics }}, is it live: {{ live }}, tools covered are : {{ tools }}"
