@@ -1,6 +1,8 @@
 - name: filters
   hosts: local
   connection: local
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
   - name: handle undefine variables
     ansible.builtin.debug:
