@@ -1,8 +1,8 @@
 - name: variables
   hosts: local
   connection: local
-  #vars:
-  # GREET: "PLAY"
+  vars:
+    GREET: "PLAY"
   #vars_files:
   # - course.yaml
   #vars_prompt:
@@ -11,10 +11,10 @@
   #   private: false  # By default prompt input is invisible, make it true if shouldn't be confidential/secret
   tasks:
   - name: Print the variables
-    #vars:
-    #  GREET: "Task"
+    vars:
+      GREET: "Task"
     ansible.builtin.debug:
-      msg: "Hello from {{ GREET }}"
+      msg: "Hello from {{ GREET }}. This is Class: {{ COURSE }}"
 #preferences:
 # 1) Command line or arguments
 # 2) Task level
