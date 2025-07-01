@@ -50,6 +50,11 @@
     ansible.builtin.debug:
       msg: "Min is: {{ numbers | min }}, Max is: {{ numbers | max }}"
   
+  - name: Ensure netaddr to be installed
+    pip:
+      name: netaddr
+      executable: pip3
+  
   - name: IP address validation
     vars:
       ip: "{{ ipaddr }}"
