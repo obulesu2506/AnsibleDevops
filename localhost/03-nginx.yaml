@@ -1,5 +1,5 @@
 - name: nginx install & enable
-  hosts: local
+  hosts: localhost
   tasks:
   - name: unstall nginx frontend
     ansible.builtin.package:
