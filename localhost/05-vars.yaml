@@ -1,0 +1,11 @@
+- name: Example for Variables declaration and calling the same
+  hosts: localhost
+  vars: #PLAY level variables
+    COURSE: "DevOps with AWS"
+    DURATION: "120 hrs"
+    STUDENT: "KUMAR"
+  tasks:
+  - name: Fetching and printing variables
+    debug:
+      msg: "Course is {{ COURSE }}, Duratioon: {{ DURATION }}, Student: {{ STUDENT }}"
+ 
