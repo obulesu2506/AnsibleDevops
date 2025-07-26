@@ -11,4 +11,4 @@
       COURSE: "Ansible"
       ENV: "Testing with localhost"
     debug:
-      msg: "Course is {{ CCOURSE }}, Environment is {{ ENV }}, Student is {{ STUDENT }}"
+      msg: "Course is {{ COURSE }}, Environment is {{ ENV }}, Student is {{ STUDENT }}"
