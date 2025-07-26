@@ -9,3 +9,17 @@
     debug:
       msg: "Course is {{ COURSE }}, Duratioon: {{ DURATION }}, Student: {{ STUDENT }}"
  
+
+- name: PLAY1
+  hosts: localhost
+  vars:
+    ntp_server: 10.1.1.1
+  tasks:
+  - debug:
+      var: ntp_server
+
+- name: PLAY2
+  hosts: localhost
+  tasks:
+  - debug:
+      var: ntpserver
