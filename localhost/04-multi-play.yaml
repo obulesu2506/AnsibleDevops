@@ -1,0 +1,15 @@
+- name: Example for Multi Playbooks
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Play1 & Task1
+    ansible.builtin.debug:
+      msg: "This message from PLAY1 & TASK1"
+
+- name: Example for Multi Playbooks 
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: PLAY2 & TASK1
+    debug:
+      msg: "This message from PLAY2 & TASK1"

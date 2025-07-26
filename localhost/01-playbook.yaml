@@ -1,4 +1,4 @@
-- name: Simple playbook gor server ping
+- name: Simple playbook for server ping
   hosts: local
   tasks:
   - name: PING the server
