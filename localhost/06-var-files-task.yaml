@@ -1,0 +1,14 @@
+- name: Variables calling from files
+  hosts: localhost
+  vars_files:
+    - Course.yaml
+  tasks:
+  - name: Fetching variable values from files
+    debug:
+      msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Student is {{ STUDENT }}"
+  - name: fetching variable values from task level
+    vars:
+      COURSE: "Ansible"
+      ENV: "Testing with localhost"
+    debug:
+      msg: "Course is {{ CCOURSE }}, Environment is {{ ENV }}, Student is {{ STUDENT }}"

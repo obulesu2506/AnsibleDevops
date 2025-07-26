@@ -1,0 +1,15 @@
+- name: Variables declared in Playbook and values can be fetched during run time via prompt basis
+  hosts: localhost
+  vars_prompt:
+    - name: COURSE
+      prompt: Please enter the course name
+    - name: DURATION
+      prompt: Please enter Duration
+    - name: STUDENT
+      prompt: Please enter Student name
+  tasks:
+  - name: Vars prompt example and print the same
+    ansible.builtin.debug:
+      msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Student is {{ STUDENT }}"
+
+
