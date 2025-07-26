@@ -1,0 +1,9 @@
+- name: Check multiple Mongodbs
+  hosts: localhost
+  tasks:
+    - debug: msg="DB={{ item.database }} PID={{ item.pid }}"
+      with_mongodb:
+        - database: dev
+          connection_string: "mongodb://dev.mongo/"
+        - database: qa
+          connection_string: "mongodb://qa.mongo/"
