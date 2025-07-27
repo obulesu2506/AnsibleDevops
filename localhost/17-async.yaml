@@ -9,11 +9,17 @@
 
     - name: command for listing variables
       command: ls -ltr
-      async: 100
-      poll: 0
+      async: 360
+      poll: 20
       register: output
 
     - name: print the output
       debug:
         msg: "list of current directory: {{ output }}"
+
+    - name: Check status of tasks
+      async_status: jid={{ output.ansible_job_id }}
+      register: output1
+      until: output1.finished
+      retries: 30
 
