@@ -1,3 +1,19 @@
 COURSE: "DevOps with AWS"
 DURATION: "120 hrs"
 STUDENT: "Kumar"
+topics: #list variables i.e., []
+  - roles
+  - async
+  - file separation
+  - vault
+  - strategy
+  - filters
+  - lookups
+live: True
+tools: # dictionary/map  {}
+  strategy: serial/fork
+  roles: handlers/include/meta/templates/vars/defaults/library/lookups
+  secrets: vault
+  async: async/poll/async_status/retries/until
+
+
