@@ -6,7 +6,9 @@
     - name: printing the variables from the yaml file
       debug:
         msg: "I am learning new course {{ COURSE }}, with topics {{ topics }} in live {{ live }}, along witgh tools {{ tools }}"
-        async: 100
-        poll: 0
-        register: output
+    - name: command for listing variables
+      command: ls -ltr
+      async: 100
+      poll: 0
+      register: output
 
