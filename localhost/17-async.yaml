@@ -1,5 +1,7 @@
 - name: Ping the server
   hosts: localhost
+  vars_files:
+    - Course.yaml
   tasks:
     - name: printing the variables from the yaml file
       debug:
@@ -7,4 +9,4 @@
         async: 100
         poll: 0
         register: output
-        
+
