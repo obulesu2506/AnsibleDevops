@@ -1,0 +1,45 @@
+- name: Deploy web application
+  hosts: web
+  tasks:
+    - name: Install Ansible & Python dependencies
+      apt: name:{{ item }} state=present force=yes
+      with_items:
+        - python
+        - python-setuptools
+        - python dev
+        - build-essential
+        - python-pip
+        - python-mysqldb
+    
+    - name: Install MYSQL DB & MYSQL Client
+      apt: name:{{ item }} state:present
+      with_items:
+        - mysql-server
+        - mysql-client
+
+    - name: Start MYSQL service
+      service:
+        name: mysql
+        state: Started
+        enabled: yes
+
+    - name: Create Application DB
+      mysqldb: name:employee_db state=present
+
+    - name: Create DB user
+      mysql_user:
+        name: db_user
+        password: Passw0rd
+        priv: '*.*:ALL'
+        state: present
+        host: '%'
+
+    - name: Install Python Flask dependencies
+      apt: name:{{ item }} state=present
+      with_items:
+        - flask
+        - flask-mysql
+    
+    
+
+

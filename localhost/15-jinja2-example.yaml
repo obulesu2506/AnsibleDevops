@@ -1,0 +1,21 @@
+- name: Set Firewall Configuration
+  hosts: localhost
+  vars_files:
+    - web.yaml
+  tasks:
+    - firewalld:
+        service: https
+        permanet: True
+        state: enabled
+    - firewalld:
+        port: '{{ http_port }}'/tcp
+        permanent: True
+        state: disabled
+    - firewalld:
+        port: '{{ snmp_port }}'/udp
+        permanent: True
+        state: disabled
+    - firewalld:
+        source: '{{ inter_ip_range }}'/24
+        zone: internal
+        state: enabled
